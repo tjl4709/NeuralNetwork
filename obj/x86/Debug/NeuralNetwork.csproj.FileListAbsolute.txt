@@ -4,3 +4,9 @@ C:\Users\Linse Household\Source\Repos\NeuralNetwork\bin\Debug\ConsoleApplication
 C:\Users\Linse Household\Source\Repos\NeuralNetwork\bin\Debug\ConsoleApplication.pdb
 C:\Users\Linse Household\Source\Repos\NeuralNetwork\obj\x86\Debug\ConsoleApplication.exe
 C:\Users\Linse Household\Source\Repos\NeuralNetwork\obj\x86\Debug\ConsoleApplication.pdb
+C:\Users\The 'Rents\source\repos\NeuralNetwork\bin\Debug\ConsoleApplication.exe
+C:\Users\The 'Rents\source\repos\NeuralNetwork\bin\Debug\ConsoleApplication.pdb
+C:\Users\The 'Rents\source\repos\NeuralNetwork\obj\x86\Debug\NeuralNetwork.csprojAssemblyReference.cache
+C:\Users\The 'Rents\source\repos\NeuralNetwork\obj\x86\Debug\NeuralNetwork.csproj.CoreCompileInputs.cache
+C:\Users\The 'Rents\source\repos\NeuralNetwork\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\The 'Rents\source\repos\NeuralNetwork\obj\x86\Debug\ConsoleApplication.pdb

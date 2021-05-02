@@ -15,9 +15,9 @@ namespace NeuralNetwork
 
         public HandDigits()
         {
-            images = new BinaryReader(File.OpenRead("..\\..\\data\\train-images"));
+            images = new BinaryReader(File.OpenRead("..\\..\\train-images"));
             idim = ReadHeader(images, out itype);
-            labels = new BinaryReader(File.OpenRead("..\\..\\data\\train-labels"));
+            labels = new BinaryReader(File.OpenRead("..\\..\\train-labels"));
             ldim = ReadHeader(labels, out ltype);
             network = new Network(new int[] { 784, 800, 10});
         }
@@ -71,22 +71,15 @@ namespace NeuralNetwork
             }
             network.Train(inputs, results);
         }
-        public void Test(out int expected, out int actual)
+        public void Test(out int expected, out double[] actual)
         {
             if (images.BaseStream.Position >= images.BaseStream.Length || labels.BaseStream.Position >= labels.BaseStream.Length) {
-                expected = actual = -1;
+                expected = -1;
+                actual = null;
                 return;
             }
             ReadCase(out double[] input, out expected);
-            double[] result = network.Predict(input);
-            double max = 0;
-            int imax = 0;
-            for (int i = 0; i < result.Length; i++)
-                if (result[i] > max) {
-                    max = result[i];
-                    imax = i;
-                }
-            actual = imax;
+            actual = network.Predict(input);
         }
     }
 }

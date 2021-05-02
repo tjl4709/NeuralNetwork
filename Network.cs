@@ -27,8 +27,8 @@ namespace NeuralNetwork
 				layer.BeginTraining();
 			for (int i = 0; i < inputs.Count; i++) {
 				double[] da = Cost(Predict(inputs[i]), outputs[i]);
-				foreach (Layer layer in layers)
-					da = layer.Train(da);
+				for (int j = layers.Length - 1; j >= 0; j--)
+					da = layers[j].Train(da);
 			}
 			foreach (Layer layer in layers)
 				layer.EndTraining(inputs.Count);
