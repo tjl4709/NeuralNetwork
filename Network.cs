@@ -5,15 +5,13 @@ namespace NeuralNetwork
 {
 	public class Network
 	{
-		private Layer[] layers;
-		private RandomExt rand;
+		private readonly Layer[] layers;
 
 		public Network(int[] layerSizes)
 		{
-			rand = new RandomExt();
 			layers = new Layer[layerSizes.Length - 1];
 			for (int i = 0; i < layers.Length; i++)
-				layers[i] = new Layer(layerSizes[i], layerSizes[i + 1], rand);
+				layers[i] = new Layer(layerSizes[i], layerSizes[i + 1]);
 		}
 
 		public double[] Predict(double[] input)
@@ -53,8 +51,6 @@ namespace NeuralNetwork
 		
 		private class Layer
 		{
-			private RandomExt rand;
-
 			private double[,] weights, dw;
 			public double[,] Weights { get { return weights; } }
 
@@ -64,9 +60,9 @@ namespace NeuralNetwork
 			private bool training;
 			private double[] input, result;
 
-			public Layer(int preSize, int size, RandomExt rand)
+			public Layer(int preSize, int size)
 			{
-				this.rand = rand;
+				RandomExt rand = new RandomExt();
 				training = false;
 				weights = new double[size, preSize];
 				biases = new double[size];
